@@ -1,9 +1,15 @@
 package com.practice.springtest.models;
 
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 @Entity
 @Table(name="users")
 public class User {
+
+    @Id
     public Integer id;
 
     private String email;
