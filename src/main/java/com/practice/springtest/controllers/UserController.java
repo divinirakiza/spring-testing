@@ -1,5 +1,6 @@
 package com.practice.springtest.controllers;
 
+import com.practice.springtest.domains.APIResponse;
 import com.practice.springtest.models.User;
 import com.practice.springtest.models.dtos.UserDTO;
 import com.practice.springtest.services.UserService;
@@ -24,13 +25,15 @@ public class UserController {
 
     @GetMapping("/users/{id}")
     public ResponseEntity<?> getUserById(@PathVariable("id") Integer id) {
+        User user = this.userService.getById(id);
+        if (user == null) return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new APIResponse("User not found"));
         return ResponseEntity.status(HttpStatus.OK).body(this.userService.getById(id));
     }
 
     @PostMapping("/users")
     public ResponseEntity<?> createUser(@RequestBody UserDTO userDTO) {
         User user = new User(userDTO.getEmail(), userDTO.getFirstName(), userDTO.getFirstName(), userDTO.getType());
-        return ResponseEntity.status(HttpStatus.OK).body(this.userService.createUser(user));
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.userService.createUser(user));
     }
 
 

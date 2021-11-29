@@ -9,6 +9,13 @@ public class UserDTO {
 
     private String type;
 
+    public UserDTO(String email, String firstName, String lastName, String type) {
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.type = type;
+    }
+
     public String getEmail() {
         return email;
     }

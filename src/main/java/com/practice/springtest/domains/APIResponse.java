@@ -16,6 +16,11 @@ public class APIResponse {
             this.message = message;
         }
 
+    public APIResponse(String message) {
+        super();
+        this.message = message;
+    }
+
 
         public boolean isStatus() {
             return status;
