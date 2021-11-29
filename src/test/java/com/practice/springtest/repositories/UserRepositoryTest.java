@@ -27,7 +27,7 @@ public class UserRepositoryTest {
 
     @Test
     public void getById_Success() {
-        Optional<User> optionalUser = this.userRepository.findById(1);
+        Optional<User> optionalUser = this.userRepository.findById(2);
         assertTrue(optionalUser.isPresent());
     }
 
@@ -36,4 +36,14 @@ public class UserRepositoryTest {
         Optional<User> optionalUser = this.userRepository.findById(4);
         assertFalse(optionalUser.isPresent());
     }
+
+    @Test
+    public void save_Success() {
+        User user = new User(1, "email@43", "User 1", "User 2", "ADMIN");
+
+        User saved = this.userRepository.save(user);
+
+        assertEquals(user.getEmail(), saved.getEmail());
+    }
+
 }

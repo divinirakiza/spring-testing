@@ -1,0 +1,1 @@
+INSERT INTO users VALUES (2, 'user@emial.d', 'User 1', 'User 2', 'TEST');

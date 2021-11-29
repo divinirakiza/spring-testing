@@ -29,4 +29,14 @@ public class UserService {
         return this.userRepository.save(user);
     }
 
+
+    public boolean delete(Integer id) {
+        Optional<User> optionalUser = this.userRepository.findById(id);
+        if (!optionalUser.isPresent()) return false;
+
+        this.userRepository.deleteById(id);
+        return true;
+
+    }
+
 }
