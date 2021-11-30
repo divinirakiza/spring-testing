@@ -1,6 +1,8 @@
 package com.practice.springtest.config;
 
 
+import com.practice.springtest.security.CustomAuthenticationFilter;
+import com.practice.springtest.services.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +20,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private AuthenticationService userDetailsService;
+    private AuthService userDetailsService;
 
     @Autowired
     private CustomAuthenticationFilter customAuthenticationFilter;
