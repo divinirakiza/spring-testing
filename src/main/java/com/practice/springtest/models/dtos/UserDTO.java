@@ -1,5 +1,8 @@
 package com.practice.springtest.models.dtos;
 
+import com.practice.springtest.models.User;
+import org.springframework.beans.BeanUtils;
+
 public class UserDTO {
     private String email;
 
@@ -14,6 +17,9 @@ public class UserDTO {
         this.firstName = firstName;
         this.lastName = lastName;
         this.type = type;
+    }
+    public UserDTO(User user){
+        BeanUtils.copyProperties(user,this);
     }
 
     public String getEmail() {

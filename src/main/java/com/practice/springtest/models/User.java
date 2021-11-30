@@ -17,24 +17,25 @@ public class User {
 
     private String lastName;
 
-    private String type;
+    private String password;
+
 
     public User() {};
 
-    public User(Integer id, String email, String firstName, String lastName, String type) {
+    public User(Integer id, String email, String firstName, String lastName, String password) {
         this.id = id;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.type = type;
+        this.password = password;
     }
 
 
-    public User(String email, String firstName, String lastName, String type) {
+    public User(String email, String firstName, String lastName, String password) {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.type = type;
+        this.password = password;
     }
 
     public Integer getId() {
@@ -69,11 +70,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getType() {
-        return type;
+    public String getPassword() {
+        return password;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setPassword(String type) {
+        this.password = type;
     }
 }
